@@ -24,7 +24,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools ==80.9.0
+    - setuptools ==82.0.1
   run:
     - python >=${{ python_min }}
     - mac_alias >=2.2.2
@@ -34,7 +34,9 @@ tests:
       imports:
         - ds_store
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - files:
       source:
         - tests
