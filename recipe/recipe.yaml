@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: ds_store
-  version: 1.3.2
+  version: "1.3.3"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: e4da49df901123481a85b9250945f2aac054a0f0c29352cd2cc858c536cdd364
+  sha256: a7380896ea1e880f7ba07c5cdc24bd1530fb86836cad0be531f3e80e2d721ac5
 
 build:
   number: 0
@@ -24,7 +24,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools ==80.9.0
+    - setuptools ==82.0.1
   run:
     - python >=${{ python_min }}
     - mac_alias >=2.2.2
@@ -34,7 +34,9 @@ tests:
       imports:
         - ds_store
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - files:
       source:
         - tests
