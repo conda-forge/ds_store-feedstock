@@ -24,7 +24,8 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools ==82.0.1
+    - setuptools ==84.2.1
+    - setuptools-scm ==10.3.4
   run:
     - python >=${{ python_min }}
     - mac_alias >=2.2.2
